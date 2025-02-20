@@ -3,7 +3,9 @@ const canvasStyles = window.getComputedStyle(canvas);
 let canvasWidth = parseInt(canvasStyles.getPropertyValue("width"));
 let canvasHeight = parseInt(canvasStyles.getPropertyValue("height"));
 
-function generatePseudoGrid(gridSize = 16) {
+let gridSize = 16;
+
+function generatePseudoGrid(gridSize) {
     const boxWidth = canvasWidth / gridSize;
     const boxHeight = canvasHeight / gridSize;
 
@@ -40,4 +42,19 @@ function clearPseudoGrid() {
     });
 }
 
-generatePseudoGrid();
+const clearButton = document.querySelector(".clearButton");
+clearButton.addEventListener("click", () => {
+    clearPseudoGrid();
+    generatePseudoGrid(gridSize);
+})
+
+const resizeButton = document.querySelector(".resizeButton");
+resizeButton.addEventListener("click", () => {
+    do {
+        gridSize = prompt("How many squares should be in each row and column? Between 1 and 100", 16);
+    } while (gridSize < 1 || gridSize > 100);
+    clearPseudoGrid();
+    generatePseudoGrid(gridSize);
+})
+
+generatePseudoGrid(gridSize);
