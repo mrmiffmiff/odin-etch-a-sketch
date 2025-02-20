@@ -3,9 +3,7 @@ const canvasStyles = window.getComputedStyle(canvas);
 let canvasWidth = parseInt(canvasStyles.getPropertyValue("width"));
 let canvasHeight = parseInt(canvasStyles.getPropertyValue("height"));
 
-let gridSize = 16;
-
-function generatePseudoGrid() {
+function generatePseudoGrid(gridSize = 16) {
     const boxWidth = canvasWidth / gridSize;
     const boxHeight = canvasHeight / gridSize;
     console.log(boxWidth);
