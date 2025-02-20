@@ -1,8 +1,8 @@
 .canvas {
     display: flex;
     flex-wrap: wrap;
-    box-sizing: border-box;
+    box-sizing: content-box;
     border: 1px solid black;
-    width: 90vw;
-    height: 90vh;
+    width: 800px;
+    height: 800px;
 }
