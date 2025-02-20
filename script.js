@@ -58,3 +58,5 @@ resizeButton.addEventListener("click", () => {
 })
 
 generatePseudoGrid(gridSize);
+
+//may return to this someday for gradient color change and for other colors but for now I'm satisfied
